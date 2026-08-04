@@ -1,0 +1,29 @@
+.mission-status-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.status-grid {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.status-pill {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.status-metrics {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 860px) {
+  .status-grid,
+  .status-metrics {
+    grid-template-columns: 1fr;
+  }
+}

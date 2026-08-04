@@ -1,0 +1,21 @@
+.footer-status {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.footer-status div {
+  padding: 1rem;
+}
+
+@media (max-width: 960px) {
+  .footer-status {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-status {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,21 @@
+:root {
+  --bg-primary: #050b14;
+  --bg-secondary: #0a1424;
+  --bg-card: rgba(13, 25, 48, 0.82);
+  --bg-card-hover: rgba(20, 38, 70, 0.9);
+  --border-color: rgba(0, 210, 255, 0.24);
+  --border-focus: #00e5ff;
+  --glass-glow: 0 0 18px rgba(0, 229, 255, 0.12);
+  --accent-cyan: #00e5ff;
+  --accent-blue: #1f7eff;
+  --accent-green: #24ff9f;
+  --accent-yellow: #ffce5a;
+  --accent-red: #ff4d7a;
+  --font-header: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --text-primary: #e8f5ff;
+  --text-secondary: #9cb5d4;
+  --text-muted: #5f7d9d;
+  --transition-fast: 0.16s ease;
+  --transition-normal: 0.28s cubic-bezier(0.42, 0, 0.12, 1);
+}

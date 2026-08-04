@@ -1,0 +1,15 @@
+.orientation-visualization {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.orientation-canvas {
+  min-height: 380px;
+  width: 100%;
+  border-radius: 1.6rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, rgba(2, 14, 30, 0.96), rgba(8, 19, 42, 0.96));
+  border: 1px solid rgba(0, 229, 255, 0.14);
+  box-shadow: inset 0 0 50px rgba(0, 229, 255, 0.06);
+}

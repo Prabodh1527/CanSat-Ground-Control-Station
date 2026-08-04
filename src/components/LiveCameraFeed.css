@@ -1,0 +1,42 @@
+.live-camera-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.camera-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+}
+
+.camera-card {
+  position: relative;
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
+
+.camera-view {
+  height: 100%;
+  width: 100%;
+  min-height: 280px;
+}
+
+.camera-status-bar {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 999px;
+  padding: 0.8rem 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 860px) {
+  .camera-controls {
+    grid-template-columns: 1fr;
+  }
+}

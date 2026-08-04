@@ -1,0 +1,156 @@
+@import './variables.css';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  background-image:
+    radial-gradient(circle at 15% 12%, rgba(0, 229, 255, 0.16), transparent 22%),
+    radial-gradient(circle at 85% 18%, rgba(23, 137, 255, 0.12), transparent 20%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 55%);
+  background-size: cover;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(0, 229, 255, 0.03) 1px, transparent 1px), linear-gradient(rgba(0, 229, 255, 0.03) 1px, transparent 1px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  opacity: 0.24;
+}
+
+button {
+  font: inherit;
+}
+
+button, select {
+  cursor: pointer;
+}
+
+button {
+  transition: transform var(--transition-fast), box-shadow var(--transition-normal), background var(--transition-normal);
+}
+
+button:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img, video {
+  max-width: 100%;
+  display: block;
+}
+
+.gcs-card {
+  background: rgba(5, 13, 30, 0.94);
+  border: 1px solid rgba(0, 229, 255, 0.14);
+  border-radius: 22px;
+  box-shadow: 0 28px 95px rgba(0, 0, 0, 0.26), var(--glass-glow);
+  backdrop-filter: blur(18px);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), border-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gcs-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 229, 255, 0.22);
+  box-shadow: 0 34px 110px rgba(0, 0, 0, 0.30), 0 0 28px rgba(0, 229, 255, 0.08);
+}
+
+.gcs-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  opacity: 0.78;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+.panel-header h2 {
+  font-family: var(--font-header);
+  font-size: 1.18rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.panel-header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+.panel-tag {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--accent-cyan);
+  border: 1px solid rgba(0, 229, 255, 0.18);
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+}
+
+.status-pill, .command-pill {
+  border-radius: 999px;
+  display: inline-flex;
+  padding: 0.35rem 0.85rem;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.command-pill.idle {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-secondary);
+}
+.command-pill.pending {
+  background: rgba(255, 183, 0, 0.14);
+  color: var(--accent-yellow);
+}
+.command-pill.executing {
+  background: rgba(0, 229, 255, 0.14);
+  color: var(--accent-cyan);
+}
+.command-pill.success {
+  background: rgba(0, 255, 142, 0.14);
+  color: var(--accent-green);
+}
+.command-pill.failed {
+  background: rgba(255, 77, 122, 0.14);
+  color: var(--accent-red);
+}
+
+@media (max-width: 1140px) {
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

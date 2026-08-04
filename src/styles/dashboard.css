@@ -1,0 +1,439 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 1rem;
+  padding: 1.2rem 1.4rem 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.col-span-3 { grid-column: span 3; }
+.col-span-4 { grid-column: span 4; }
+.col-span-6 { grid-column: span 6; }
+.col-span-8 { grid-column: span 8; }
+.col-span-9 { grid-column: span 9; }
+.col-span-12 { grid-column: span 12; }
+
+@media (max-width: 1280px) {
+  .col-span-3, .col-span-4 { grid-column: span 6; }
+  .col-span-8, .col-span-9 { grid-column: span 12; }
+}
+
+@media (max-width: 860px) {
+  .dashboard-container {
+    padding: 1rem;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .col-span-3, .col-span-4, .col-span-6, .col-span-8, .col-span-9, .col-span-12 {
+    grid-column: span 1;
+  }
+}
+
+.top-control-bar {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(340px, 1fr) minmax(240px, 1fr);
+  gap: 1rem;
+  align-items: center;
+  padding: 1.1rem 1.3rem;
+}
+
+.top-control-left, .top-control-right {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.brand-pill, .mission-data-pill {
+  border: 1px solid rgba(0, 229, 255, 0.16);
+  padding: 0.9rem 1rem;
+  border-radius: 14px;
+  background: rgba(0, 9, 21, 0.82);
+  min-width: 130px;
+}
+
+.brand-pill span {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.mission-data-pill span {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.84rem;
+}
+
+.mission-data-pill strong {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 1.1rem;
+}
+
+.top-control-buttons {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.primary-btn, .secondary-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 0.95rem 1.2rem;
+  font-weight: 700;
+  transition: transform var(--transition-fast), background var(--transition-normal), opacity var(--transition-fast);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.95), rgba(0, 152, 255, 0.85));
+  color: #07101d;
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 229, 255, 0.16);
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: translateY(-1px);
+}
+
+.primary-btn:disabled, .secondary-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  min-width: 170px;
+  background: rgba(1, 15, 30, 0.88);
+}
+
+.status-label {
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+}
+
+.status-online strong { color: var(--accent-green); }
+.status-offline strong { color: var(--accent-red); }
+.status-warm strong { color: var(--accent-yellow); }
+
+.mission-control-panel, .telemetry-panel, .real-time-graphs, .gps-tracking-map, .orientation-visualization, .live-camera-feed, .error-monitoring-panel, .mission-status-card {
+  padding: 1.35rem;
+}
+
+.mission-control-panel .command-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.command-card {
+  border: 1px solid rgba(0, 229, 255, 0.12);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(3, 18, 38, 0.85);
+}
+
+.command-card h3 {
+  font-size: 0.98rem;
+  margin-bottom: 0.5rem;
+}
+
+.command-card button {
+  margin-top: auto;
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.85), rgba(28, 115, 242, 0.95));
+  color: #07101d;
+  font-weight: 700;
+}
+
+.command-card button:disabled {
+  opacity: 0.45;
+}
+
+.telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.telemetry-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(0, 229, 255, 0.08);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.telemetry-card span {
+  display: block;
+  color: var(--text-muted);
+  margin-bottom: 0.55rem;
+}
+
+.telemetry-card strong {
+  font-size: 1.05rem;
+}
+
+.real-time-graphs .graph-controls {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.real-time-graphs .graph-controls button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+}
+
+.real-time-graph-chart {
+  height: 370px;
+  padding: 1rem;
+  background: rgba(3, 18, 38, 0.88);
+  border-radius: 1.25rem;
+}
+
+.error-monitoring-panel .error-code-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+}
+
+.error-code-value {
+  font-size: 1.8rem;
+  letter-spacing: 0.18em;
+}
+
+.error-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.error-row {
+  padding: 1rem;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+  border-radius: 1rem;
+  background: rgba(1, 10, 20, 0.85);
+}
+
+.error-row span {
+  display: block;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.error-row p {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+}
+
+.gps-tracking-map .map-frame {
+  width: 100%;
+  min-height: 370px;
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
+
+.orientation-canvas {
+  width: 100%;
+  min-height: 360px;
+  border-radius: 1.3rem;
+  overflow: hidden;
+}
+
+.live-camera-feed .camera-controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.camera-select {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.camera-select label {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.camera-select select {
+  border-radius: 12px;
+  border: 1px solid rgba(0, 229, 255, 0.16);
+  background: rgba(1, 12, 24, 0.9);
+  padding: 0.85rem 0.9rem;
+  color: var(--text-primary);
+}
+
+.camera-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.camera-actions button {
+  border: none;
+  border-radius: 14px;
+  padding: 0.85rem 1.05rem;
+  background: rgba(0, 229, 255, 0.16);
+  color: var(--text-primary);
+}
+
+.camera-card {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: rgba(2, 13, 28, 0.88);
+  min-height: 280px;
+}
+
+.camera-view {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #030a14;
+}
+
+.camera-status-bar {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  padding: 0.85rem 1rem;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: var(--text-secondary);
+}
+
+.mission-status-card .status-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.status-pill {
+  padding: 1rem;
+  border-radius: 1rem;
+  display: grid;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.status-primary {
+  border: 1px solid rgba(0, 229, 255, 0.18);
+}
+
+.status-accent {
+  border: 1px solid rgba(0, 143, 255, 0.18);
+}
+
+.status-alert {
+  border: 1px solid rgba(255, 77, 122, 0.18);
+}
+
+.status-alert-soft {
+  border: 1px solid rgba(255, 191, 108, 0.18);
+}
+
+.status-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.85rem;
+}
+
+.status-metrics div {
+  padding: 1rem;
+  background: rgba(0, 11, 23, 0.82);
+  border-radius: 1rem;
+}
+
+.status-metrics span {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+.status-metrics strong {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 1.1rem;
+}
+
+.footer-status {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  padding: 1rem 1.2rem;
+}
+
+.footer-status div {
+  background: rgba(0, 12, 24, 0.86);
+  border-radius: 1rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.footer-status span {
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  font-size: 0.85rem;
+}
+
+.footer-status strong {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1100px) {
+  .mission-control-panel .command-grid,
+  .telemetry-grid,
+  .status-grid,
+  .status-metrics,
+  .footer-status {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .top-control-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .top-control-buttons, .top-control-left, .top-control-right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,14 @@
+.error-monitoring-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.error-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.error-row {
+  border-radius: 1.2rem;
+}
